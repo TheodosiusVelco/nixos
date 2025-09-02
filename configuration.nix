@@ -38,12 +38,19 @@
 	"flakes"
   ];
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.wayland = true;
+
+  #enable hyperland
+  programs.hyprland = {    
+        enable = true;    
+        xwayland.enable = true;    
+  }; 
+
+  #disable gnome default apps
+  services.gnome.core-utilities.enable = false;
   environment.gnome.excludePackages = with pkgs; [
     baobab      # disk usage analyzer
     cheese      # photo booth
@@ -59,10 +66,13 @@
     seahorse    # password manager
 
     # these should be self explanatory
-    gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-contacts
+    gnome-tour gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-contacts
     gnome-font-viewer gnome-logs gnome-maps gnome-music gnome-photos gnome-screenshot
     gnome-system-monitor gnome-weather gnome-disk-utility pkgs.gnome-connections
+    pkgs.gnome-shell-extensions gnome-user-docs
   ];
+
+
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -72,9 +82,6 @@
 
   # Configure console keymap
   console.keyMap = "de-latin1-nodeadkeys";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -106,7 +113,7 @@
   };
 
   # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.enable = false;
   services.displayManager.autoLogin.user = "julius";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
@@ -121,6 +128,7 @@
     vim 
     git
   ];
+  programs.steam.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
