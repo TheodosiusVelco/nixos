@@ -1,0 +1,116 @@
+{
+  "nodes": {
+    "dotfiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1752662533,
+        "narHash": "sha256-JJuLmowhAUya+nfJ3rBmNwi6SXYScYyzBqsM0C53Ht0=",
+        "ref": "refs/heads/master",
+        "rev": "605f289b34936c605e6485933fd16d9725fb8ffd",
+        "revCount": 16,
+        "type": "git",
+        "url": "ssh://git@github.com/TheodosiusVelco/Dotfiles.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/TheodosiusVelco/Dotfiles.git"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1756788591,
+        "narHash": "sha256-LOrOfPWpJU/ADWDyVwPv9XNuYPq5KJtmAmSzplpccmE=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "f3d3b4592a73fb64b5423234c01985ea73976596",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1756542300,
+        "narHash": "sha256-tlOn88coG5fzdyqz6R93SQL5Gpq+m/DsWpekNFhqPQk=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "d7600c775f877cd87b4f5a831c28aa94137377aa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs",
+        "spicetify-nix": "spicetify-nix",
+        "vim": "vim"
+      }
+    },
+    "spicetify-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1756614537,
+        "narHash": "sha256-qyszmZO9CEKAlj5NBQo1AIIADm5Fgqs5ZggW1sU1TVo=",
+        "owner": "Gerg-L",
+        "repo": "spicetify-nix",
+        "rev": "374eb5d97092b97f7aaafd58a2012943b388c0df",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gerg-L",
+        "repo": "spicetify-nix",
+        "type": "github"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "vim": {
+      "inputs": {
+        "dotfiles": "dotfiles"
+      },
+      "locked": {
+        "path": "./modules/vim",
+        "type": "path"
+      },
+      "original": {
+        "path": "./modules/vim",
+        "type": "path"
+      },
+      "parent": []
+    }
+  },
+  "root": "root",
+  "version": 7
+}
